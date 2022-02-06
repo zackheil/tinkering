@@ -6,7 +6,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: npm
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Source Code
+        run: npm run build
+      - name: Run Unit Tests
+        run: npm run test
+
+  version:
+    needs: test
+    name: Create Git Tag Version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,3 +38,29 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
+
+  publish:
+    needs: version
+    name: Publish NPM Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: npm
+          registry-url: "https://npm.pkg.github.com"
+      - name: Create NPM Version
+        run: npm version $(node -e "console.log('$(git describe --tags)'.split('-')[0])") --no-git-tag-version
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Source Code
+        run: npm run build
+      - name: Attach Registry
+        run: echo "@zackheil:registry=https://npm.pkg.github.com" > .npmrc
+      - name: Publish Package Version
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
