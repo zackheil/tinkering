@@ -1,6 +1,6 @@
 {
   "name": "@zackheil/gh-actions",
-  "version": "0.0.1",
+  "version": "0.1.0-2-g4cc806f",
   "description": "",
   "main": "index.js",
   "scripts": {
