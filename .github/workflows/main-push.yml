@@ -26,7 +26,7 @@ jobs:
 
   version:
     needs: test
-    name: Create Git Tag Version
+    name: Create Git Tag Version & Publish NPM Package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,12 +38,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
-
-  publish:
-    needs: version
-    name: Publish NPM Package
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout Branch
         uses: actions/checkout@v2
       - name: Setup NodeJS
