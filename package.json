@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"woo! fake unit tests passed\"",
+    "build": "echo \"woo! fake build process\""
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/zackheil/gh-actions/issues"
   },
-  "homepage": "https://github.com/zackheil/gh-actions#readme"
+  "homepage": "https://github.com/zackheil/gh-actions#readme",
+  "dependencies": {
+    "flatstr": "^1.0.12"
+  }
 }
