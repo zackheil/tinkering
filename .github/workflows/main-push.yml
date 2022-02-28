@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: "16"
           cache: npm
+          cache-dependency-path: package-lock.json
       - name: Install Dependencies
         run: npm install
       - name: Build Source Code
@@ -45,6 +46,7 @@ jobs:
         with:
           node-version: "16"
           cache: npm
+          cache-dependency-path: package-lock.json
           registry-url: "https://npm.pkg.github.com"
       - name: Create NPM Version
         run: npm version $(node -e "console.log('$(git describe --tags)'.split('-')[0])") --no-git-tag-version
