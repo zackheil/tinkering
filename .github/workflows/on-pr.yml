@@ -3,9 +3,12 @@ name: PR metadata annotation
 on: 
   pull_request:
     types: [opened, reopened, synchronize]
+  issue_comment:
+    types: [created]
 
 jobs:
   annotate-pr:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     name: Annotates pull request with metadata
     steps:
