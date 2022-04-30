@@ -7,6 +7,15 @@ on:
     types: [created]
 
 jobs:
+  log: 
+    runs-on: ubuntu-latest
+    name: Prints out the event context that the action received for quick debugging
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
   annotate-pr:
     if: ${{ github.event.issue.pull_request || github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
