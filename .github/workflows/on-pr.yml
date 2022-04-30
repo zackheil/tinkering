@@ -16,10 +16,10 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
-  annotate-pr:
-    if: ${{ github.event.issue.pull_request || github.event_name == 'pull_request'}}
+  pr-commits:
+    if: ${{ github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
-    name: Annotates pull request with metadata
+    name: Allows bot to respond to PR events
     steps:
       - name: Annotate PR
         uses: zackheil/test-action@main
@@ -29,3 +29,17 @@ jobs:
           pr_number: ${{ github.event.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
           triggered_by: ${{github.event.action}}
+          
+  comments:
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    name: Allows bot to respond to comments
+    steps:
+    - name: Annotate PR
+      uses: zackheil/test-action@main
+      with:
+        owner: ${{ github.repository_owner }}
+        repo: ${{ github.event.repository.name }}
+        pr_number: ${{ github.event.issue.number }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        triggered_by: ${{github.event.action}}
