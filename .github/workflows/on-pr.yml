@@ -24,7 +24,7 @@ jobs:
       - name: Annotate PR
         uses: zackheil/test-action@main
         with:
-          context: ${{ github }}
+          context: ${{ toJson(github) }}
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
           pr_number: ${{ github.event.number }}
