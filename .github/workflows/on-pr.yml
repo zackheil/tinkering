@@ -25,11 +25,7 @@ jobs:
         uses: zackheil/test-action@main
         with:
           context: ${{ toJson(github) }}
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          pr_number: ${{ github.event.number }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          triggered_by: ${{github.event.action}}
+
           
   comments:
     if: ${{ github.event.issue.pull_request }}
@@ -40,8 +36,3 @@ jobs:
       uses: zackheil/test-action@main
       with:
         context: ${{ toJson(github) }}
-        owner: ${{ github.repository_owner }}
-        repo: ${{ github.event.repository.name }}
-        pr_number: ${{ github.event.issue.number }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-        triggered_by: ${{github.event.action}}
