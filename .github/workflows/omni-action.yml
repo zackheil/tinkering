@@ -1,0 +1,79 @@
+name: PR metadata annotation
+
+on: 
+  branch_protection_rule:
+    types: [created, edited, deleted]
+#   check_run:
+#     types: [created, rerequested, completed, requested_action]
+  check_suite:
+    types: [completed]
+#   create:
+#   delete:
+#   deployment:
+#   deployment_status:
+  discussion:
+    types: 
+    - created
+    - edited
+    - deleted
+    - transferred
+    - pinned
+    - unpinned
+    - labeled
+    - unlabeled
+    - locked
+    - unlocked
+    - category_changed
+    - answered
+    - unanswered
+  discussion_comment:
+    types: [created, edited, deleted]
+#   fork:
+#   gollum:
+  issue_comment:
+    types: [created, edited, deleted]
+  issues:
+    types:
+    - opened
+    - edited
+    - deleted
+    - transferred
+    - pinned
+    - unpinned
+    - closed
+    - reopened
+    - assigned
+    - unassigned
+    - labeled
+    - unlabeled
+    - locked
+    - unlocked
+    - milestoned
+    - demilestoned
+# To be continued...
+  pull_request:
+    types: [opened, reopened, synchronize]
+  push:
+    branches:    
+      - 'main'
+  
+
+jobs:
+  log: 
+    runs-on: ubuntu-latest
+    name: Prints out the event context that the action received for quick debugging
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+  omni-action:
+    runs-on: ubuntu-latest
+    name: Allows bot to perform automated actions for this repository
+    steps:
+      - name: Run omni-action
+        uses: zackheil/omni-action@main
+        with:
+          context: ${{ toJson(github) }}
+          
