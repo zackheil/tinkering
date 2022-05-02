@@ -16,23 +16,12 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
-  pr-commits:
-    if: ${{ github.event_name == 'pull_request'}}
+  omni-action:
     runs-on: ubuntu-latest
-    name: Allows bot to respond to PR events
+    name: Allows bot to perform automated actions for this repository
     steps:
-      - name: Annotate PR
-        uses: zackheil/test-action@main
+      - name: Run omni-action
+        uses: zackheil/omni-action@main
         with:
           context: ${{ toJson(github) }}
-
           
-  comments:
-    if: ${{ github.event.issue.pull_request }}
-    runs-on: ubuntu-latest
-    name: Allows bot to respond to comments
-    steps:
-    - name: Annotate PR
-      uses: zackheil/test-action@main
-      with:
-        context: ${{ toJson(github) }}
