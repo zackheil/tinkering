@@ -76,4 +76,5 @@ jobs:
         uses: zackheil/omni-action@main
         with:
           context: ${{ toJson(github) }}
+          token: ${{ WORKFLOW_TOKEN }}
           
