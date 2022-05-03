@@ -27,7 +27,7 @@ jobs:
           cache-dependency-path: package-lock.json
           registry-url: "https://npm.pkg.github.com"
       - name: Create NPM Version
-        run: npm version ${{ inputs.version }} --no-git-tag-version
+        run: npm version ${{ github.event.inputs.version }} --no-git-tag-version
       - name: Install Dependencies
         run: npm install
       - name: Build Source Code
@@ -35,6 +35,6 @@ jobs:
       - name: Attach Registry
         run: echo "@zackheil:registry=https://npm.pkg.github.com" > .npmrc
       - name: Publish Package Version
-        run: npm publish --tag ${{ inputs.tag }}
+        run: npm publish --tag ${{ github.event.inputs.tag }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
