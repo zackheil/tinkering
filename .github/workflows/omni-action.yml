@@ -68,6 +68,15 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
+  test: 
+    if: ${{ github.base_ref != 'not_main' }}
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: testing condition
+        run: echo 'hi'
+        
+        
   omni-action:
     runs-on: ubuntu-latest
     name: Allows bot to perform automated actions for this repository
