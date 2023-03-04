@@ -52,7 +52,7 @@ on:
     - demilestoned
 # To be continued...
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: [opened, reopened, synchronize, unlabeled]
   push:
     branches:    
       - 'main'
