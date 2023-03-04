@@ -73,7 +73,9 @@ jobs:
     name: Test
     steps:
       - name: testing existence of var
-        run: echo ${{ github.pull_request.head.sha }} 
+        run: echo $VAR
+        env:
+          VAR: ${{ github.pull_request.head.sha }} 
         
         
   omni-action:
