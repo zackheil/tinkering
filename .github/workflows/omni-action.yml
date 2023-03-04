@@ -69,12 +69,11 @@ jobs:
       run: |
         echo "$GITHUB_CONTEXT"
   test: 
-    if: ${{ github.base_ref != 'not_main' }}
     runs-on: ubuntu-latest
     name: Test
     steps:
-      - name: testing condition
-        run: echo 'hi'
+      - name: testing existence of var
+        run: echo ${{ github.pull_request.head.sha }} 
         
         
   omni-action:
