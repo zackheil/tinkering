@@ -24,6 +24,7 @@ jobs:
           script: |
             github.rest.pulls.create({
               owner: "zackheil",
+              repo: "gh-actions",
               title: "Weekly Dependency Updates",
               head: "dependabot-staging",
               base: "main",
