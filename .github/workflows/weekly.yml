@@ -21,7 +21,7 @@ jobs:
       - name: Create Draft PR for Updates
         uses: actions/github-script@v6
         with:
-          run: |
+          script: |
             github.rest.pulls.create({
               owner: "zackheil",
               title: "Weekly Dependency Updates",
