@@ -26,5 +26,20 @@ jobs:
           cache-dependency-path: package-lock.json
       
       - name: The Action To Test
+        id: semver
         uses: rapidstack/PR-Label-Semver-Action@dev
+        
+      - name: Create tag
+        uses: actions/github-script@v5
+        env:
+          TAG: ${{ ${{ steps.semver.outputs.string }}
+        with:
+          script: |
+            const { TAG } = process.env
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/v${TAG}`,
+              sha: context.sha
+            })
 
