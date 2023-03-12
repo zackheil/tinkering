@@ -25,7 +25,7 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
       
-      - name: The Action To Test
+      - name: Generate Semantic Version
         id: semver
         uses: rapidstack/PR-Label-Semver-Action@dev
         
