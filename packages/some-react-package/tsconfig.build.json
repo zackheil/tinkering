@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "module": "ES2022",
     "noEmit": false,
     "outDir": "./dist"
-  }
+  },
+  "exclude": ["**/*.test.ts*"],
+  "include": ["src"]
 }

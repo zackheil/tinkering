@@ -19,6 +19,6 @@
   ],
   "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["nodenext"],
-  "prettier.configPath": "prettier.config.cjs"
+  "cSpell.words": ["nodenext"]
+  // "prettier.configPath": "prettier.config.cjs"
 }

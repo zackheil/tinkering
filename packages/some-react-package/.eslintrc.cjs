@@ -1,10 +1,15 @@
+/* eslint-disable no-undef */ // Because module.exports is causing issues.
+
 // @ts-check
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2022,
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
   },
   ignorePatterns: [
     '!.*',
@@ -15,8 +20,15 @@ module.exports = {
     'dist',
   ],
   extends: [
+    'eslint:recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'react', 'react-hooks'],
+  env: {
+    browser: true,
+    es2021: true,
+  },
 };
