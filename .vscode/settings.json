@@ -1,0 +1,54 @@
+{
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [
+    { "column": 8, "color": "#ff000012" },
+    { "column": 80, "color": "#77777710" }
+  ],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "yaml"
+  ],
+  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": ["nodenext"],
+  "prettier.configPath": "prettier.config.cjs",
+}
+
+// {
+//   "cSpell.words": [
+//     "autobuild",
+//     "codeql",
+//     "esbuild",
+//     "nodenext",
+//     "outdir",
+//     "prereleases",
+//     "rapidstack",
+//     "thollander",
+//     "typecheck",
+//     "vitest",
+//     "Zack",
+//     "zackheil"
+//   ],
+//   "[typescript]": {
+//     "editor.codeActionsOnSave": {
+//       "source.fixAll.eslint": true
+//     },
+//     "editor.defaultFormatter": "esbenp.prettier-vscode",
+//     "editor.tabSize": 2
+//   },
+//   "[json]": {
+//     "editor.codeActionsOnSave": {
+//       "source.fixAll.eslint": true
+//     },
+//     "editor.defaultFormatter": "esbenp.prettier-vscode",
+//     "editor.tabSize": 2
+//   }
+// }

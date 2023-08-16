@@ -1,0 +1,16 @@
+{
+  "name": "@tinkering/some-react-package",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -b tsconfig.build.json"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@types/react": "^18.2.20",
+    "react": "^18.2.0"
+  }
+}
