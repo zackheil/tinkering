@@ -6,6 +6,9 @@ const setupFile = './setup.test.ts';
 export default defineConfig({
   plugins: [react()],
   test: {
+    coverage: {
+      provider: 'v8',
+    },
     environment: 'jsdom',
     exclude: [setupFile],
     name: 'Some React Package',

@@ -5,3 +5,4 @@ dist
 .sst
 .DS_Store
 package-lock.json
+coverage

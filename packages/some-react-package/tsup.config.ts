@@ -1,16 +1,11 @@
 import { defineConfig } from 'tsup';
 
-// import { sharedTsupConfig } from '../../tsup.config.js';
+import { sharedTsupConfig } from '../../tsup.config.js';
 
 export default defineConfig({
-  bundle: false,
-  clean: true,
-  entry: ['src/**/*.ts*', '!src/**/*.test.*', '!dist/**/*'],
-  esbuildOptions(options) {
-    options.outbase = './';
-  },
+  ...sharedTsupConfig,
+  entry: ['src/**/*.ts', 'src/**/*.tsx', '!src/**/*.test.*', '!dist/**/*'],
   format: ['esm'],
-  outDir: 'dist',
+  shims: false,
   sourcemap: true,
-  tsconfig: './tsconfig.build.json',
 });

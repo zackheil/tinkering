@@ -1,5 +1,4 @@
 // @ts-check
-/** @type import('prettier').Config */
 module.exports = {
   /**
    * Print Width
@@ -82,7 +81,8 @@ module.exports = {
    * Trailing Commas
    * https://prettier.io/docs/en/options.html#trailing-commas
    *
-   * Print trailing commas wherever possible when multi-line. (A single-line array, for example, never gets trailing commas.)
+   * Print trailing commas wherever possible when multi-line. (A single-line
+   * array, for example, never gets trailing commas.)
    *
    * trailingComma: "<es5|none|all>"
    * default: 'es5'
@@ -104,7 +104,9 @@ module.exports = {
    * Bracket Line
    * https://prettier.io/docs/en/options.html#bracket-line
    *
-   * Put the > of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+   * Put the > of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end
+   * of the last line instead of being alone on the next line (does not apply to
+   * self-closing elements).
    *
    * bracketSameLine: <bool>
    * default: false
@@ -164,7 +166,9 @@ module.exports = {
    * Require pragma
    * https://prettier.io/docs/en/options.html#require-pragma
    *
-   * Prettier can restrict itself to only format files that contain a special comment, called a pragma, at the top of the file. This is very useful when gradually transitioning large, unformatted codebases to prettier.
+   * Prettier can restrict itself to only format files that contain a special
+   * comment, called a pragma, at the top of the file. This is very useful when
+   * gradually transitioning large, unformatted code bases to prettier.
    *
    * requirePragma: <bool>
    * default: false
@@ -175,7 +179,11 @@ module.exports = {
    * Insert Pragma
    * https://prettier.io/docs/en/options.html#insert-pragma
    *
-   * Prettier can insert a special @format marker at the top of files specifying that the file has been formatted with prettier. This works well when used in tandem with the --require-pragma option. If there is already a docblock at the top of the file then this option will add a newline to it with the @format marker.
+   * Prettier can insert a special @format marker at the top of files specifying
+   * that the file has been formatted with prettier. This works well when used
+   * in tandem with the --require-pragma option. If there is already a docblock
+   * at the top of the file then this option will add a newline to it with
+   * the @format marker.
    *
    * insertPragma: <bool>
    * default: false
@@ -186,7 +194,10 @@ module.exports = {
    * Prose Wrap
    * https://prettier.io/docs/en/options.html#prose-wrap
    *
-   * By default, Prettier will wrap markdown text as-is since some services use a linebreak-sensitive renderer, e.g. GitHub comment and BitBucket. In some cases you may want to rely on editor/viewer soft wrapping instead, so this option allows you to opt out with "never".
+   * By default, Prettier will wrap markdown text as-is since some services use
+   * a line break sensitive renderer, e.g. GitHub comment and BitBucket. In some
+   * cases you may want to rely on editor/viewer soft wrapping instead, so this
+   * option allows you to opt out with "never".
    *
    * proseWrap: "<always|never|preserve>"
    * default: "preserve"
@@ -197,7 +208,8 @@ module.exports = {
    * HTML Whitespace Sensitivity
    * https://prettier.io/docs/en/options.html#html-whitespace-sensitivity
    *
-   * Specify the global whitespace sensitivity for HTML files, see whitespace-sensitive formatting for more info.
+   * Specify the global whitespace sensitivity for HTML files, see
+   * whitespace-sensitive formatting for more info.
    *
    * htmlWhitespaceSensitivity: "<css|strict|ignore>"
    * default: "css"
@@ -206,9 +218,10 @@ module.exports = {
 
   /**
    * Vue files script and style tags indentation
-   * https://prettier.io/docs/en/options.html#vue-files-script-and-style-tags-indentation
    *
-   * Whether or not to indent the code inside <script> and <style> tags in Vue files. Some people (like the creator of Vue) don’t indent to save an indentation level, but this might break code folding in your editor.
+   * Whether or not to indent the code inside <script> and <style> tags in Vue
+   * files. Some people (like the creator of Vue) don’t indent to save an
+   * indentation level, but this might break code folding in your editor.
    *
    * vueIndentScriptAndStyle: <bool>
    * default: false
@@ -219,7 +232,11 @@ module.exports = {
    * End of Line
    * https://prettier.io/docs/en/options.html#end-of-line
    *
-   * For historical reasons, there exist two common flavors of line endings in text files. That is \n (or LF for Line Feed) and \r\n (or CRLF for Carriage Return + Line Feed). The former is common on Linux and macOS, while the latter is prevalent on Windows. Some details explaining why it is so can be found on Wikipedia.
+   * For historical reasons, there exist two common flavors of line endings in
+   * text files. That is \n (or LF for Line Feed) and \r\n (or CRLF for Carriage
+   * Return + Line Feed). The former is common on Linux and macOS, while the
+   * latter is prevalent on Windows. Some details explaining why it is so can
+   * be found on Wikipedia.
    *
    * endOfLine: "<lf|crlf|cr|auto>"
    * default: "lf"

@@ -11,7 +11,6 @@ module.exports = {
   ignorePatterns: [
     '!.*',
     'coverage*',
-    'lib',
     'node_modules',
     'pnpm-lock.yaml',
     'dist',
@@ -93,7 +92,7 @@ module.exports = {
     },
     {
       excludedFiles: ['**/*.md/*.{ts,tsx}'],
-      files: ['**/*.{ts,tsx}'],
+      files: ['**/*.ts', '**/*.tsx'],
       parser: '@typescript-eslint/parser',
       rules: {
         'deprecation/deprecation': 'error',
