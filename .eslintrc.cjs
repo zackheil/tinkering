@@ -4,11 +4,6 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.common.json',
-    sourceType: 'module',
-    ecmaVersion: 'latest',
-  },
   env: {
     node: true,
     es2022: true,
@@ -80,17 +75,6 @@ module.exports = {
     // JSDoc Plugin Rules
     'jsdoc/informative-docs': 'error',
   },
-  // overrides: [
-  //   {
-  //     files: ['**/*.md'],
-  //     processor: 'markdown/markdown',
-  //   },
-  //   {
-  //     files: ['**/*.md/*.{ts,typescript,tsx,node}'],
-  //     parser: '@typescript-eslint/parser',
-  //     rules: {},
-  //   },
-  // ],
   overrides: [
     {
       extends: ['plugin:markdown/recommended'],
@@ -98,16 +82,9 @@ module.exports = {
       processor: 'markdown/markdown',
     },
     {
-      excludedFiles: ['**/*.md/*.ts'],
-      extends: [
-        'plugin:@typescript-eslint/strict-type-checked',
-        'plugin:@typescript-eslint/stylistic-type-checked',
-      ],
-      files: ['**/*.ts'],
+      excludedFiles: ['**/*.md/*.{ts,tsx}'],
+      files: ['**/*.{ts,tsx}'],
       parser: '@typescript-eslint/parser',
-      parserOptions: {
-        project: './tsconfig.common.json',
-      },
       rules: {
         'deprecation/deprecation': 'error',
         '@typescript-eslint/no-unnecessary-condition': [
@@ -117,13 +94,10 @@ module.exports = {
           },
         ],
       },
-    },
-    {
-      files: '**/*.test.ts',
-      rules: {
-        // These on-by-default rules aren't useful in test files.
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/no-unsafe-call': 'off',
+      parserOptions: {
+        project: './tsconfig.common.json',
+        sourceType: 'module',
+        ecmaVersion: 'latest',
       },
     },
   ],
