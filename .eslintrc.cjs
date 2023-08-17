@@ -23,7 +23,6 @@ module.exports = {
     'perfectionist',
     'vitest',
     'jsdoc',
-    'deprecation',
     'eslint-plugin-local-rules',
   ],
   extends: [
@@ -33,7 +32,6 @@ module.exports = {
     'plugin:perfectionist/recommended-natural',
     'plugin:vitest/recommended',
     'plugin:jsdoc/recommended-typescript',
-    'plugin:deprecation/recommended',
   ],
   rules: {
     // Base ESlint Rules
@@ -105,6 +103,8 @@ module.exports = {
           },
         ],
       },
+      plugins: ['deprecation'],
+      extends: ['plugin:deprecation/recommended'],
       parserOptions: {
         project: './tsconfig.common.json',
         sourceType: 'module',

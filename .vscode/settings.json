@@ -40,6 +40,12 @@
       "filename": true,
       "extensions": ["eslint-local-rules.cjs", "eslint-local-rules.js"],
       "format": "svg"
+    },
+    {
+      "icon": "tsconfig",
+      "filename": true,
+      "extensions": ["tsup.config.ts"],
+      "format": "svg"
     }
   ]
 }
