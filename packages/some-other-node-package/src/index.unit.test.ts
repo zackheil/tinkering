@@ -1,4 +1,5 @@
-import { expect, test, describe, vi } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
+
 import { sayHello } from './index.js';
 
 describe('some-node-package', () => {

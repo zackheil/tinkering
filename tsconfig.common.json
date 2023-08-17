@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["**/*.ts", "**/*.tsx", "**/.eslintrc.cjs", "prettier.config.cjs"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/.eslintrc.cjs",
+    "prettier.config.cjs",
+    "."
+  ]
 }

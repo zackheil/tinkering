@@ -1,14 +1,14 @@
-import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config';
 
 const setupFile = './setup.test.ts';
 
 export default defineConfig({
   plugins: [react()],
   test: {
-    name: 'Some React Package',
     environment: 'jsdom',
-    setupFiles: [setupFile],
     exclude: [setupFile],
+    name: 'Some React Package',
+    setupFiles: [setupFile],
   },
 });

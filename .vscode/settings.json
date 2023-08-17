@@ -17,8 +17,22 @@
     "typescriptreact",
     "yaml"
   ],
+  "workbench.colorCustomizations": {
+    "list.warningForeground": "#ffa726" // Warnings on the file name
+  },
   "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["nodenext"]
+  "cSpell.words": ["nodenext", "tsup"],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "node_modules",
+    ".eslintrc*",
+    "prettier.config.cjs",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders"
+  ]
   // "prettier.configPath": "prettier.config.cjs"
 }
