@@ -24,6 +24,7 @@ module.exports = {
     'vitest',
     'jsdoc',
     'deprecation',
+    'eslint-plugin-local-rules',
   ],
   extends: [
     'plugin:@typescript-eslint/recommended',
@@ -49,6 +50,13 @@ module.exports = {
       },
     ],
     'no-case-declarations': 'off',
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'TSEnumDeclaration',
+        message: 'Use const objects over TS Enums',
+      },
+    ],
 
     // Typescript ESlint Plugin Rules
     '@typescript-eslint/consistent-type-imports': [
@@ -74,6 +82,9 @@ module.exports = {
 
     // JSDoc Plugin Rules
     'jsdoc/informative-docs': 'error',
+
+    // Local Rules
+    'local-rules/require-node-prefix': 'error',
   },
   overrides: [
     {

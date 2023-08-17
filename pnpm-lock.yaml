@@ -32,6 +32,9 @@ importers:
       eslint-plugin-jsdoc:
         specifier: ^46.4.6
         version: 46.4.6(eslint@8.47.0)
+      eslint-plugin-local-rules:
+        specifier: ^1.3.2
+        version: 1.3.2
       eslint-plugin-markdown:
         specifier: ^3.0.1
         version: 3.0.1(eslint@8.47.0)
@@ -1873,6 +1876,10 @@ packages:
       spdx-expression-parse: 3.0.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /eslint-plugin-local-rules@1.3.2:
+    resolution: {integrity: sha512-X4ziX+cjlCYnZa+GB1ly3mmj44v2PeIld3tQVAxelY6AMrhHSjz6zsgsT6nt0+X5b7eZnvL/O7Q3pSSK2kF/+Q==}
     dev: true
 
   /eslint-plugin-markdown@3.0.1(eslint@8.47.0):

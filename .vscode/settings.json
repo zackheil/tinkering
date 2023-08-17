@@ -18,7 +18,7 @@
     "yaml"
   ],
   "workbench.colorCustomizations": {
-    "list.warningForeground": "#ffa726" // Warnings on the file name
+    "list.warningForeground": "#ffa726"
   },
   "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
   "typescript.tsdk": "node_modules/typescript/lib",
@@ -33,6 +33,13 @@
     ".git/objects",
     ".vscode",
     ".vscode-insiders"
+  ],
+  "vsicons.associations.files": [
+    {
+      "icon": "eslint",
+      "filename": true,
+      "extensions": ["eslint-local-rules.cjs", "eslint-local-rules.js"],
+      "format": "svg"
+    }
   ]
-  // "prettier.configPath": "prettier.config.cjs"
 }
