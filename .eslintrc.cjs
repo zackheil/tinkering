@@ -66,6 +66,7 @@ module.exports = {
       'error',
       { blankLine: 'always', next: '*', prev: 'block-like' },
     ],
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
 
     // Import Plugin Rules
     'import/extensions': ['error', 'ignorePackages'],
