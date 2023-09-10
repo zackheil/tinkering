@@ -1,0 +1,35 @@
+name: PR Checks
+
+permissions: write-all
+
+on:
+  pull_request:
+    types:
+      - assigned
+      - labeled
+      - unlabeled
+      - opened
+      - synchronize
+      - ready_for_review
+      - reopened
+      - closed
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish-latest-package:
+    if: ${{ github.event.pull_request.merged && github.event.pull_request.base.ref == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Branch
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const branchToDelete = context.payload.pull_request.head.ref;
+            github.git.deleteRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `heads/${branchToDelete}`
+            });
