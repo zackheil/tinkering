@@ -28,7 +28,7 @@ jobs:
         with:
           script: |
             const branchToDelete = context.payload.pull_request.head.ref;
-            github.git.deleteRef({
+            github.rest.git.deleteRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: `heads/${branchToDelete}`
