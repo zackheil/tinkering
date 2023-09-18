@@ -1,16 +1,19 @@
-/* eslint-disable no-undef */ // Because module.exports is causing issues.
+/* eslint-disable no-undef */
 
 // @ts-check
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 'latest',
+
+const config = {
+  env: {
+    browser: true,
+    es2021: true,
   },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
   ignorePatterns: [
     '!.*',
     'coverage*',
@@ -19,16 +22,26 @@ module.exports = {
     'pnpm-lock.yaml',
     'dist',
   ],
-  extends: [
-    'eslint:recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    project: ['tsconfig.common.json'],
+    sourceType: 'module',
+    tsconfigRootDir: __dirname,
+  },
   plugins: ['@typescript-eslint', 'prettier', 'react', 'react-hooks'],
-  env: {
-    browser: true,
-    es2021: true,
+  // add exhaustive-deps rule
+  rules: {
+    'react-hooks/exhaustive-deps': 'error',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
+
+module.exports = config;

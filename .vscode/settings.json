@@ -7,6 +7,10 @@
     { "column": 8, "color": "#ff000020" },
     { "column": 80, "color": "#77777750" }
   ],
+  // "eslint.workingDirectories": [
+  //   "{workspaceFolder}",
+  //   "{workspaceFolder}/packages/some-react-package"
+  // ],
   "eslint.probe": [
     "javascript",
     "javascriptreact",

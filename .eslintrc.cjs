@@ -1,7 +1,9 @@
+/* eslint-disable jsdoc/check-tag-names */
 /* eslint-disable perfectionist/sort-objects */
 
 // @ts-check
-module.exports = {
+/** @type {import("eslint").Linter.Config} */
+const config = {
   root: true,
   parser: '@typescript-eslint/parser',
   env: {
@@ -113,3 +115,5 @@ module.exports = {
     },
   ],
 };
+
+module.exports = config;
